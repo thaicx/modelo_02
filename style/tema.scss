@@ -1,0 +1,109 @@
+$primaryColor: #FF774A;
+$darkColor: #0d0d0d;
+$lightColor: #ffffff;
+$fontTitulo: 'Raleway', sans-serif;
+$fontParagrafo: 'Raleway', sans-serif;
+$tema: #fff;
+
+@function luma($c) {
+    $-local-red: red(rgba($c, 1.0));
+    $-local-green: green(rgba($c, 1.0));
+    $-local-blue: blue(rgba($c, 1.0));
+   
+    @return (0.2126 * $-local-red  +
+             0.7152 * $-local-green +
+             0.0722 * $-local-blue) / 255;
+}
+
+@function pick-visible-color($bg, $c1, $c2) {
+    $bg-luma: luma($bg);
+    $c1-luma: luma($c1);
+    $c2-luma: luma($c2);
+   
+    $c1-diff: abs($bg-luma - $c1-luma);
+    $c2-diff: abs($bg-luma - $c2-luma);
+   
+    @if $c1-diff > $c2-diff {
+      @return $c1;
+    } @else {
+      @return $c2;
+    }
+}
+
+::-moz-selection { /* Code for Firefox */
+    color: pick-visible-color($primaryColor, $darkColor, $lightColor);
+    background: $primaryColor;
+}
+  
+::selection {
+    color: pick-visible-color($primaryColor, $darkColor, $lightColor);
+    background: $primaryColor;
+}
+
+* {
+    font-size: 15px;
+    -webkit-transition: all .2s ease-out;
+    -moz-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+    font-family: $fontParagrafo;
+    color: pick-visible-color($tema, $darkColor, $lightColor);
+
+    li{
+        list-style: none;
+    }
+
+    ol, ul {
+        padding-left: 0;
+    }
+}
+
+
+body {
+    background-color: $tema;
+
+}
+
+// BARRA DE ROLAGEM CUSTOMIZADA
+    /* width */
+    ::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        border-radius: 50px;
+        background:/* #282725*/ rgba(pick-visible-color($tema, $darkColor, $lightColor), 0.12);
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background:/* #3E3A36*/ rgba(pick-visible-color($tema, $darkColor, $lightColor), 0.1); 
+        border-radius: 50px;
+        border: 1px solid /*#514F4F*/ rgba(pick-visible-color($tema, $darkColor, $lightColor), 0.15);
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: /*#514F4F*/ rgba(pick-visible-color($tema, $darkColor, $lightColor), 0.18); 
+    }
+
+// PARA FUNDOS COLORIDOS
+.bg {
+    &__primary {
+        background-color: $primaryColor;
+        color: pick-visible-color($primaryColor, $darkColor, $lightColor);
+
+        * {
+            color: pick-visible-color($primaryColor, $darkColor, $lightColor);
+        }
+    }
+
+    &__grey {
+        background-color: #f5f5f5;
+        color: pick-visible-color(#f5f5f5, $darkColor, $lightColor);
+
+        * {
+            color: pick-visible-color(#f5f5f5, $darkColor, $lightColor);
+        }
+    }
+}

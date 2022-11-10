@@ -1,0 +1,1041 @@
+
+@import "tema.scss";
+
+// TOOLTIP
+.tooltip
+{
+    .tooltip-inner{
+        background-color: $tema;
+        color: pick-visible-color($tema, $darkColor, $lightColor) !important;
+        font-family: $fontTitulo !important;
+        padding: 16px !important;
+        max-width: 100% !important;
+        border: 1px solid #000;
+        font-size: 16px !important;
+    }
+}
+
+// TRADUTOR
+.tradutor{
+    &__btn{
+        background: transparent;
+        color: $primaryColor;
+        border: none;
+        box-shadow: none;
+        opacity: 0.8;
+        font-size: 18px;
+
+        i{
+            color: $primaryColor;
+            font-size: 12px;
+            margin-left: 5px;
+        }
+
+        &:after{
+            display: none;
+        }
+
+        &:hover,
+        &:focus{
+            opacity: 1;
+            border: none;
+            box-shadow: none;
+            outline: none;
+        }
+
+        &.show{
+            opacity: 1;
+            i{
+                transform: rotate(180deg);
+                padding-top: 3px;
+            }
+        }
+    }
+
+    &__menu{
+        border-radius: 0;
+        border: 1px solid rgba(darken(#fff, 30%), 0.2);
+        padding-top: 0;
+        padding-bottom: 0;
+        background: $tema;
+
+        a{
+            min-height: 42px;
+            line-height: 42px;
+            color: pick-visible-color($tema, $darkColor, $lightColor);
+            &.active,
+            &:focus{
+                background: $primaryColor;
+                color: pick-visible-color($primaryColor, $darkColor, $lightColor);
+            }
+
+            &:not(.active){
+                &:hover{
+                    background-color: rgba($primaryColor, 0.2);
+                    color: pick-visible-color($tema, $darkColor, $lightColor);
+                }
+            }
+        }
+    }
+}
+
+// ESTILIZAÇÃO HEADER
+#header{
+    position: relative;
+    background-color: $tema;
+    $borderColor: pick-visible-color($tema, $darkColor, $lightColor);
+    border: 1px solid rgba($borderColor, 0.05);
+    padding-top: 5px;
+
+    @media (max-width: 992px){
+        padding-top: 2px;
+    }
+
+    .logotipo__topo{
+        text-align: left;
+        img{
+            width: auto;
+            height: auto;
+            max-height: 300px;
+            -o-object-fit: scale-down;
+            object-fit: scale-down;
+        }
+    }
+
+    &.sticky{
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 2;
+
+        @media (max-width: 992px){
+            img{
+                max-height: 70px;
+            }
+        }
+    }
+
+    .wrapper__acoes{
+        .copiar__link{
+            font-weight: normal;
+            i{
+                color: $primaryColor;
+                margin-left: 5px;
+            }
+        }
+    }
+}
+
+// MENU EXTRA ANIMAÇÃO
+.menu__navegacao__closed {
+    .eltdf-fullscreen-menu-opener {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        top: 0;
+        border: none;
+
+        .eltdf-fm-lines {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            width: 30px;
+            height: 20px;
+
+            .eltdf-fm-line {
+                position: absolute;
+                left: 0;
+                height: 1px;
+                width: 100%;
+                background-color: $primaryColor;
+                border-radius: 0;
+                -webkit-transition: -webkit-transform .3s ease,top .2s ease-out,background-color .2s ease-out;
+                -moz-transition: -moz-transform .3s ease,top .2s ease-out,background-color .2s ease-out;
+                transition: transform .3s ease,top .2s ease-out,background-color .2s ease-out;
+
+                &.eltdf-line-1 {
+                    top: 0;
+                    outline: transparent solid 1px;
+                }
+
+                &.eltdf-line-2 {
+                    top: calc(50% - 2px);
+                    outline: transparent solid 1px;
+                }
+
+                &.eltdf-line-3 {
+                    top: calc(100% - 4px);
+                    outline: transparent solid 1px;
+                }
+            }
+        }
+
+        &:not(.eltdf-fm-opened){
+            &:hover{
+                .eltdf-fm-lines .eltdf-fm-line.eltdf-line-1,
+                .eltdf-fm-lines .eltdf-fm-line.eltdf-line-3 {
+                    top: calc(50% - 2px);
+                }
+
+                .eltdf-fm-lines .eltdf-fm-line.eltdf-line-2 {
+                    -webkit-transform: rotate(90deg);
+                    -moz-transform: rotate(90deg);
+                    transform: rotate(90deg);
+                }
+            }
+        }
+    }
+
+    > nav {
+        position: fixed;
+        right: 0;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        background: #0000007d;
+        z-index: 100;
+
+        &.closed {
+            right: -100%;
+        }
+
+        #menucloser {
+            position: absolute;
+            right: 64px;
+            top: 32px;
+            font-size: 24px;
+            opacity: 0.5;
+            color: pick-visible-color($tema, $darkColor, $lightColor);
+            cursor: pointer;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        .menu__holder {
+            height: 100%;
+            width: 50%;
+            float: right;
+            background: $tema;
+            padding: 64px;
+
+            li {
+                margin-bottom: 16px;
+
+                a{
+                    font-size: 16px;
+                    color: pick-visible-color($tema, $darkColor, $lightColor);
+                    opacity: 0.5;
+
+                    &.active, &:hover{
+                        opacity: 1;
+                    }
+
+                    * {
+                        color: pick-visible-color($tema, $darkColor, $lightColor);
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// TÍTULO E SUBTITULO DO SITE
+.titulo{
+    &__wrapper{
+        padding-right: 5%;
+    }
+
+
+    &__principal, &__outros{
+        font-family: $fontTitulo;
+    }
+
+    &__principal{
+        font-size: 45px;
+    }
+
+    &__outros{
+        font-size: 35px;
+    }
+
+    &__subtitulo{
+        font-size: 18px;
+        margin-top: 20px;
+    }
+}
+
+// BOTÕES E LINKS <A>
+.btn {
+    padding: 16px 24px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+
+    &__primary {
+        background-color: $primaryColor;
+        color: pick-visible-color($primaryColor, $darkColor, $lightColor) !important;
+        font-weight: bold;
+
+        i{
+            color: pick-visible-color($primaryColor, $darkColor, $lightColor);
+            margin-left: 16px;
+        }
+
+        * {
+            color: pick-visible-color($primaryColor, $darkColor, $lightColor) !important;
+        }
+    }
+}
+
+.animation_hover_up {
+    &:hover{
+        -webkit-transform: translateY(-2px);
+        -moz-transform: translateY(-2px);
+        -ms-transform: translateY(-2px);
+        transform: translateY(-2px);
+    }
+
+    &:focus{
+        transform: scale(0.99);
+    }
+}
+
+// ESTILIZAÇÃO PARA LINKS E COMPARTILHAR
+.copiar__link,
+a{
+    color: $primaryColor;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover{
+        color: lighten($primaryColor, 10%);
+        transform: translateY(-2px);
+    }
+}
+
+// IMAGEM PRINCIPAL ALTURA MÁXIMA JÁ PREPARADA
+.imagem__principal__wrapper{
+    position: relative;
+
+    @media (max-width: 992px){
+        margin-top: 60px;
+    }
+    .imagem__principal{
+        max-height: 350px;
+        width: 100%;
+        object-fit: scale-down;
+        @media (max-width: 992px){
+            margin-left: 22px;
+        }
+    }
+}
+
+//PADRONIZANDO NAV PILLS / TABS DO BOOTSTRAP
+.tabs {
+    &__center{
+        [class*="__nav"] {
+            justify-content: center;
+
+            $border: pick-visible-color($tema, $darkColor, $lightColor);
+            .nav-link{
+                opacity: 0.6;
+                color: pick-visible-color($tema, $darkColor, $lightColor);
+                border-bottom: 2px solid rgba($border, 0.2);
+                border-radius: 0;
+                font-size: 18px;
+                padding: 8px 3rem;
+                font-weight: 500;
+
+                &:hover{
+                    opacity: 1;
+                    color: inherit;
+                }
+        
+                &.active{
+                    background-color: transparent;
+                    color: pick-visible-color($tema, $darkColor, $lightColor);
+                    border-bottom: 2px solid $primaryColor;
+                    opacity: 1;
+                }
+            }
+        }
+
+        [class*="__conteudo"] {
+            img {
+                max-height: 360px;
+                height: 100%;
+                object-fit: contain;
+            }
+
+            iframe {
+                width: 100%;
+                height: 360px
+            }
+        }
+    }
+}
+
+// MAIS INFORMAÇÕES PARA OS TIPOS DE EMPREENDIMENTO
+.info{
+
+    &__mais{
+        margin-top: 25px;
+
+        @media (max-width: 992px){
+            display: block;
+        }
+    }
+    
+    &__item{
+        display: inline-block;
+        margin-right: 22px;
+
+        @media (max-width: 992px){
+            display: flex;
+            justify-content: space-between;
+            margin-right: 0;
+            margin-bottom: 15px;
+        }
+    }
+
+    &__tipo{
+        opacity: 0.6;
+        font-size: 16px;
+        font-weight: 400;
+        margin-right: 10px;
+    }
+}
+
+// MAIS INFORMAÇÕES: DESCRIÇÃO, DIFERENCIAIS E VALORES
+// PADRONIZANDO ACORDIAO DO BOOSTRAP
+.acordiao__maisinfo{
+    .accordion-item {
+        background-color: transparent;
+        border: none;
+    }
+    .accordion-button,
+    .accordion-button:not(.collapsed),
+    .accordion-button:focus {
+        color: inherit;
+        font-size: 20px;
+        background-color: transparent;
+        box-shadow: none;
+        border-color: transparent;
+    }
+
+    .accordion-button::after{
+        background-image: none;
+    }
+
+    .accordion-body {
+        padding: 25px 0;
+    }
+}
+
+// CARACTERÍSTICAS: QUARTOS, BANHEIROS, VAGAS ETC..
+// FORMATO GRID, COM ICONE LADO ESQUERDO, TITULO LADO DIREITO
+.caracteristicas{
+
+    &__icones{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 25px;
+
+        @media (max-width: 992px){
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    &__flexbox{
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        margin: 0;
+    }
+
+    &__icon{
+        font-size: 21px;
+        color: $primaryColor;
+    }
+
+    &__tipo{
+        opacity: 0.6;
+        font-size: 12px;
+        display: block;
+    }
+
+    &__valor{
+        margin: 0;
+    }
+}
+
+// CONDOMÍNIO VINCULADO AO IMÓVEL
+.condominio {
+    &__main {
+        figure {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+
+            [class*="__imagem"] {
+                text-align: center;
+                flex: 0 0 50%;
+
+                img {
+                    max-height: 360px;
+                    object-fit: contain;
+                }
+            }
+
+            figcaption {
+                flex: 0 0 50%;
+
+                [class*="__titulo"] {
+                    text-align: left;
+                }
+
+                [class*="__descricao"] {
+                    font-size: 18px;
+                    strong {
+                        font-size: 18px;
+                    }
+
+                    a {
+                        display: block;
+                        margin-top: 16px;
+                        width: fit-content;
+                    }
+                }
+            }
+        }
+    }
+
+    &__cta {
+        display: flex;
+        justify-content: center;
+        gap: 32px;
+        align-items: center;
+        padding-top: 32px;
+
+        [class*="_chamada"] {
+            strong {
+                font-size: 16px;
+                display: block;
+                margin-bottom: 4px;
+            }
+
+            p {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+//UNIDADES IMÓVEIS
+#destaque__01 {
+    max-width: 360px;
+    min-width: 240px;
+    overflow: hidden;
+    border: 1px solid rgba(darken(#fff, 30%), 0.2);
+
+    figcaption{
+        padding: 0 10px;
+    }
+
+    .destaque {
+
+        &__imagem_wrapper{
+            position: relative;
+            background-color: pick-visible-color($tema, $darkColor, $lightColor);
+
+            picture{
+                min-height: 230px;
+                display: block;
+                max-height: 230px;
+                position: relative;
+                text-align: center;
+            }
+
+            img{
+                width: 100%;
+                -o-object-fit: scale-down;
+                object-fit: scale-down;
+                position: relative;
+                height: 100%;
+                min-height: 230px;
+                max-height: 230px;
+            }
+
+            [class*="__tarja"] {
+                position: absolute;
+                z-index: 1;
+                width: max-content;
+                background: $primaryColor;
+                color: pick-visible-color($primaryColor, $darkColor, $lightColor);
+                padding: 2px 5px;
+                font-size: 11px;
+                height: max-content;
+                text-transform: uppercase;
+                left: 10px;
+                font-weight: bold;
+                top: 10px;
+            }
+        }
+
+        &__codigo{
+            color: $primaryColor;
+            font-size: 11px;
+        }
+
+        &__titulo{
+            font-size: 16px;
+        }
+
+        &__localizacao{
+            font-size: 12px;
+            opacity: 0.5;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        &__chamada{
+            margin-left: -10px;
+            margin-right: -10px;
+            background-color: rgba(darken(#fff, 30%), 0.2);
+            padding: 0 10px;
+            height: 52px;
+            line-height: 52px;
+            p{
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+
+        &__icones{
+            position: relative;
+            height: 35px;
+            width: 100%;
+            margin: 16px 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-column-gap: 5px;
+            align-items: self-end;
+            padding: 0;
+
+
+            li{
+                text-align: center;
+            }
+
+            .icons-detalhe{
+                display: block;
+                width: 100%;
+                height: auto;
+                i{
+                    padding: 0 5px 0 0px;
+                }
+            }
+
+            p{
+                font-size: 11px;
+                margin: 0px;
+            }
+        }
+    }
+}
+
+#destaque__02 {
+    max-width: 360px;
+    min-width: 240px;
+    overflow: hidden;
+    border: 1px solid #F1F1F1;
+    border-radius: 10px;
+
+    figcaption{
+        padding: 0 10px;
+    }
+
+    .destaque {
+        &__imagem_wrapper{
+            position: relative;
+            background-color: pick-visible-color($tema, $darkColor, $lightColor);
+
+            picture{
+                min-height: 230px;
+                display: block;
+                max-height: 230px;
+                position: relative;
+                text-align: center;
+            }
+
+            img{
+                width: 100%;
+                -o-object-fit: scale-down;
+                object-fit: scale-down;
+                position: relative;
+                height: 100%;
+                min-height: 230px;
+                max-height: 230px;
+            }
+
+            [class*="__tarja"] {
+                position: absolute;
+                z-index: 1;
+                width: max-content;
+                background: $primaryColor;
+                color: pick-visible-color($primaryColor, $darkColor, $lightColor);
+                padding: 2px 5px;
+                font-size: 11px;
+                height: max-content;
+                text-transform: uppercase;
+                left: 10px;
+                font-weight: bold;
+                top: 10px;
+                line-height: 1;
+                padding: 8px;
+            }
+        }
+
+        &__codigo{
+            color: $primaryColor;
+            font-size: 11px;
+        }
+
+        &__titulo{
+            font-size: 16px;
+        }
+
+        &__localizacao{
+            font-size: 12px;
+            opacity: 0.5;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        &__chamada{
+            margin-left: -10px;
+            margin-right: -10px;
+            background-color: rgba(darken(#fff, 30%), 0.2);
+            padding: 0 10px;
+            height: 52px;
+            line-height: 52px;
+            p{
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+
+        &__icones{
+            position: relative;
+            height: 35px;
+            width: 100%;
+            margin: 16px 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-column-gap: 5px;
+            align-items: self-end;
+            padding: 0;
+
+
+            li{
+                text-align: center;
+            }
+
+            .icons-detalhe{
+                display: block;
+                width: 100%;
+                height: auto;
+                i{
+                    padding: 0 5px 0 0px;
+                }
+            }
+
+            p{
+                font-size: 11px;
+                margin: 0px;
+            }
+        }
+    }
+}
+
+
+// PONTOS DE INTERESSE
+.pontos_de_interesse{
+    &__opcoes{
+        ul{
+            max-height: 255px;
+            overflow: auto;
+        }
+
+        li {
+            margin-bottom: 10px;
+            margin-top: 30px;
+        }
+    }
+
+    &__mapa{
+        position: relative;
+        iframe{
+            width: 100%;
+        }
+
+        .btn__primary{
+            position: absolute;
+            z-index: 9;
+            right: 16px;
+            top: 16px;
+        }
+    }
+}
+
+//CORRETOR
+.corretor{
+
+    &__flexbox {
+        img {
+            max-width: 127px;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__nome{
+        font-family: $fontTitulo;
+        color: $primaryColor;
+        font-size: 21px;
+        margin-bottom: 0;
+    }
+
+    &__creci{
+        font-size: 12px;
+        font-style: normal;
+        opacity: 0.7;
+    }
+
+    &__dados{
+        margin: 12px 0;
+        a, p {
+            display: block;
+            font-weight: 400;
+            margin-bottom: 5px;
+        }
+
+        i{
+            margin-right: 10px;
+            opacity: 0.6;
+        }
+    }
+
+    &__ver_perfil{
+        color: $primaryColor;
+    }
+}
+
+// FORMULÁRIO
+.form-label {
+    margin-bottom: 1rem;
+}
+
+.form-check {
+    margin-bottom: 12px;
+    margin-top: 8px;
+
+    @media (max-width: 992px) {
+        &-inline{
+            display: block;
+            margin-right: 1rem;
+            margin-left: 15px;
+            margin-bottom: 25px !important;
+        }
+    }
+
+    @media (min-width: 992px) {
+        &-inline{
+            margin-right: 10%;
+        }
+    }
+}
+
+.form-check-input {
+    background: transparent;
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+    position: relative;
+    margin-top: 2px;
+    border: 2px solid rgba(pick-visible-color($tema, $darkColor, $lightColor), 0.37);
+    cursor: pointer;
+
+    + label{
+        cursor: pointer;
+    }
+
+    &:focus,
+    &:checked{
+        box-shadow: none;
+        border: 2px solid rgba(pick-visible-color($tema, $darkColor, $lightColor), 0.37);
+    }
+
+    &:checked{
+        background-color: $primaryColor;
+        color: #000;
+        background-image: none !important;
+    }
+
+    &:checked:after {
+        content: '';
+        position: absolute;
+        left: 3px;
+        top: 7px;
+        right: 0;
+        bottom: 0;
+        background: pick-visible-color($primaryColor, $darkColor, $lightColor);
+        width: 2px;
+        height: 2px;
+        box-shadow: 
+          2px 0 0 pick-visible-color($primaryColor, $darkColor, $lightColor),
+          4px 0 0 pick-visible-color($primaryColor, $darkColor, $lightColor),
+          4px -2px 0 pick-visible-color($primaryColor, $darkColor, $lightColor),
+          4px -4px 0 pick-visible-color($primaryColor, $darkColor, $lightColor),
+          4px -6px 0 pick-visible-color($primaryColor, $darkColor, $lightColor),
+          4px -8px 0 pick-visible-color($primaryColor, $darkColor, $lightColor);
+        transform: rotate(45deg);
+    }
+}
+
+.form-floating {
+    >.form-control {
+        height: 50px;
+        color: #fff;
+        background: rgba(pick-visible-color($tema, $darkColor, $lightColor), 0.12);
+        border: 2px solid rgba(pick-visible-color($tema, $darkColor, $lightColor), 0.3);
+        position: relative;
+        border-radius: 0;
+    }
+
+    >sup{
+        color: #CB0000;
+        position: absolute;
+        right: 20px;
+        top: 27px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    >label {
+        padding: 12px 0.75rem;
+    }
+
+    &.error{
+        >.form-control{
+            border: 2px solid #CB0000;
+        }
+
+        > label{
+            color: #CB0000;
+        }
+        >p{
+            color: #CB0000;
+            font-size: 12px;
+            padding: 3px 0.75rem 0;
+            margin-bottom: 0;
+        }
+    }
+}
+
+.termos__politica{
+    margin: 30px 0;
+}
+
+// Filial
+.filial{
+    &__item{
+        margin-top: 30px;
+    }
+
+    &__nome{
+        font-weight: bold;
+    }
+
+    &__dados{
+        a{
+            font-weight: normal;
+        }
+
+        p{
+            margin: 0;
+            display: inline-block;
+        }
+
+        a, p{
+            margin-right: 15px;
+            @media (max-width: 992px){
+                margin-bottom: 25px;
+            }
+            i{
+                margin-right: 5px;
+                font-size: 14px;
+            }
+            span{
+                opacity: 0.7;
+            }
+        }
+    }
+}
+
+// ELEMENTOS FIXOS (BOTAO DE CONTATO E WHATSAPP)
+#cta_contato {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 3;
+
+    @media (max-width: 992px){
+        bottom: 12px;
+        display: flex;
+        width: 100%;
+        left: 0;
+        justify-content: space-between;
+        padding: 0 12px;
+        align-items: end;
+        gap: 35px;
+
+        .btn__primary{
+            min-height: 52px;
+            flex: 0 0 calc(100% - 88px);
+        }
+    }
+
+    #link-whatsapp{
+        width: 60px;
+        height: 60px;
+        background-color: #34af23;
+        color: #FFF !important;
+        line-height: 66px;
+        text-align: center;
+        display: block;
+        border-radius: 100%;
+        i{
+            font-size: 1.7em;
+            color: #FFF !important;
+        }
+        @media (max-width: 992px){
+            width: 52px;
+            height: 52px;
+            line-height: 58px;
+            flex: 0 0 52px;
+
+            i{
+                font-size: 26px;
+            }
+        }
+    }
+}

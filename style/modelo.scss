@@ -1,0 +1,614 @@
+@import "tema.scss";
+
+.corpo__02{
+
+    [class*="secao"] {
+        padding-top: 72px;
+        padding-bottom: 72px;
+    }
+
+    @media (max-width: 992px){
+        .container{
+            padding-right: 24px;
+            padding-left: 24px;
+        }
+    }
+
+    a {
+        border-bottom: 1px solid $primaryColor;
+        color: $primaryColor;
+        font-weight: bold;
+
+        * {
+            margin-bottom: 0;
+            color: $primaryColor;
+        }
+
+        &:hover {
+            color: $primaryColor;
+        }
+    }
+
+    .header {
+
+        &__02 {
+            padding-top: 40px !important;
+            padding-bottom: 16px;
+        }
+
+        &__acoes-inline {
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            gap: 24px;
+        }
+    }
+
+    .titulo{
+    
+        &__principal, &__outros{
+            font-weight: bold;
+        }
+
+        &__tarja {
+            text-transform: uppercase;
+            color: $primaryColor;
+            margin-bottom: 32px;
+            font-weight: bold;
+            font-size: 14px;
+            display: block;
+        }
+    
+        &__principal{
+            font-size: 40px;
+            margin-bottom: 40px;
+        }
+    
+        &__outros{
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+    
+        &__subtitulo{
+            font-size: 18px;
+            opacity: 0.7;
+            margin-bottom: 24px;
+        }
+    }
+
+    .btn__primary {
+        border-radius: 50px;
+        text-transform: uppercase;
+        padding: 16px 32px;
+    }
+
+    // FLEXBOX COM UNIDADES VALOR - r$ PRECO
+    .inicio{
+        &__valor{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            margin-bottom: 34px;
+    
+            p{
+                font-size: 18px;
+            }
+    
+            strong{
+                color: $primaryColor;
+                font-size: 20px;
+            }
+        }
+    }
+
+    /*INICIO*/
+    .imagem__principal {
+
+        &__wrapper {
+
+            position: relative;
+            text-align: center;
+
+            &:after {
+                content: "";
+                width: 100%;
+                height: 80%;
+                display: block;
+                position: absolute;
+                background-color: rgba($primaryColor, 0.05);
+                border-radius: 12px;
+                top: 40px;
+                right: -40px;
+                z-index: -1;
+            }
+
+            img {
+                border-radius: 12px;
+                overflow: hidden;
+                object-fit: cover;
+                max-width: 100%;
+                margin: 0 auto;
+                position: relative;
+            }
+        }
+    }
+
+    .chamada {
+
+        &__midia{
+            justify-content: center;
+            margin-top: 64px;
+            position: relative;
+        }
+
+        &__pontos-de-interesse{
+            margin-top: 80px;
+
+            [class*="col-"] {
+                position: relative;
+            }
+
+            hr {
+                width: 200%;
+                position: absolute;
+                left: -100%;
+                opacity: 1;
+                background: pick-visible-color($tema, $darkColor, $lightColor);
+            }
+
+            figure {
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                gap: 56px;
+
+                > i {
+                    font-size: 56px;
+                }
+
+                figcaption {
+                    text-align: right;
+
+                    h2 {
+                        text-align: right;
+                        margin-bottom: 8px;
+                    }
+
+                    a {
+                        color: $primaryColor;
+                    }
+                }
+            }
+        }
+    }
+
+    /*CARACTERÍSTICAS*/
+    .caracteristicas {
+        &__icones {
+            display: flex;
+            gap: 48px;
+            flex-wrap: wrap;
+            grid-template-columns: auto;
+            justify-content: end;
+
+            [class*="__titulo"] {
+                min-width: 300px;
+
+                [class*="__flexbox"] {
+                    height: 100%;
+                    align-items: center;
+                    gap: 32px;
+
+                    i {
+                        font-size: 64px;
+                        color: $primaryColor;
+                    }
+
+                    figcaption {
+                        p{
+                            font-size: 16px;
+                            opacity: 0.6;
+                            margin-bottom: 8px;
+                        }
+
+                        h3 {
+                            font-weight: bold;
+                            font-size: 28px;
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+
+            [class*="__item"] {
+                width: 200px;
+                height: 200px;
+                $borderColor: pick-visible-color($tema, $darkColor, $lightColor);
+                border: 1px solid rgba($borderColor, 0.09);
+                border-radius: 12px;
+                padding: 32px;
+
+                &.ver_mais {
+                    background: rgba($primaryColor, 0.05);
+                    border: 1px solid $primaryColor;
+                    cursor: pointer;
+
+                    i {
+                        color: $primaryColor !important;
+                    }
+                }
+
+                [class*="__flexbox"] {
+                    flex-direction: column;
+                    align-items: end;
+                    gap: 64px;
+
+                    [class*="__icon"] {
+                        font-size: 32px;
+                        color: pick-visible-color($tema, $darkColor, $lightColor);
+                    }
+
+                    figcaption {
+
+                        * {
+                            font-size: 18px;
+                            font-weight: bold;
+                            color: pick-visible-color($tema, $darkColor, $lightColor);
+                            text-align: right;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .info__secao {
+            margin-top: 110px;
+    }
+
+    .acordiao {
+        &__secao {
+            padding-bottom: 0;
+            @media (min-width: 767px) {
+                margin-top: -224px;
+            }
+
+            [class*="__maisinfo"]{  
+
+                color: pick-visible-color($tema, $darkColor, $lightColor);
+
+                @media (min-width: 992px) {
+                    display: flex;
+                    height: 100%;
+                    justify-content: end;
+                    gap: 16px;
+                }
+
+                .accordion-item{
+                    padding: 40px 32px;
+                    background: $tema;
+                    border: 1px solid $primaryColor;
+                    border-radius: 12px;
+                    position: relative;
+                    min-height: 350px;
+
+                    &:last-child{
+                        border-bottom: none;
+                    }
+
+                    .breve-descricao{
+                        font-weight: 400;
+                        font-size: 15px;
+                        margin-bottom: 0;
+
+                        display: flex;
+                        flex-direction: column;
+                        gap: 16px;
+
+                        @media (min-width: 767px) {
+                            position: absolute;
+                            bottom: 32px;
+                        }
+
+                        &::before{
+                            font-family: "Font Awesome 5 Free";
+                            content: "\f067";
+                            -moz-osx-font-smoothing: grayscale;
+                            -webkit-font-smoothing: antialiased;
+                            display: inline-block;
+                            font-style: normal;
+                            font-variant: normal;
+                            text-rendering: auto;
+                            line-height: 1;
+                            font-weight: 900;
+                            background-image: none;
+                            color: pick-visible-color($tema, $darkColor, $lightColor);
+                            font-size: 24px;
+                        }
+                    }
+                } 
+
+                .accordion-button {
+                    padding-left: 0;
+                    font-weight: 700;
+                    font-size: 20px;
+                    
+                    min-width: 140px;
+                    position: unset;
+                    max-width: 140px;
+
+                    &:not(.collapsed){
+                        p{
+                            opacity: 0;
+                            width: 0;
+                            font-size: 0;
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /*MIDIAS DO IMÓVEIS*/
+    .secao__midias {
+        .tabs {
+            &__center{    
+                [class*="__conteudo"] {
+                    img {
+                        border-radius: 12px;
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+    }
+
+    // CONDOMÍNIO VINCULADO AO IMÓVEL
+    .condominio {
+
+        &__bloco {
+            margin-top: 110px;
+            margin-bottom: 24px;
+            position: relative;
+
+            &:before{
+                content: "";
+                width: 75%;
+                height: 95%;
+                background-color: $tema;
+                border: 1px solid $primaryColor;
+                border-radius: 12px;
+                display: block;
+                position: absolute;
+                right: 0;
+                top: -64px;
+            }
+        }
+
+        &__main,
+        &__cta {
+            position: relative;
+            z-index: 1;
+        }
+
+        &__main {
+            figure {
+
+                [class*="__imagem"] {
+                    img {
+                        border-radius: 12px;
+                        overflow: hidden;
+                    }
+                }
+
+                figcaption {
+                    padding-right: 88px;
+
+                    [class*="__titulo"] {
+                    }
+
+                    [class*="__descricao"] {
+                        strong {
+                        }
+
+                        a {
+                            color: $primaryColor !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__cta {
+
+            padding-top: 80px;
+
+            justify-content: space-between;
+            width: 75%;
+            float: right;
+
+            [class*="_chamada"] {
+                strong {
+                }
+
+                p {
+                }
+            }
+        }
+    }
+
+    /*PONTOS DE INTERESSE*/
+    .pontos_de_interesse {
+        &__bloco {
+            $borderColor: pick-visible-color($tema, $darkColor, $lightColor);
+            border: 1px solid rgba($borderColor, 0.09);
+            border-radius: 12px;
+            padding: 40px 64px;
+            margin: 40px auto;
+            position: relative;
+            background-color: $tema;
+
+            * {
+                position: relative;
+            }
+
+            &:after {
+                content: "";
+                width: 100%;
+                height: 100%;
+                display: block;
+                position: absolute;
+                background-color: rgba($primaryColor, 0.05);
+                border-radius: 12px;
+                top: 40px;
+                right: -40px;
+                z-index: -1;
+            }
+        }
+    }
+
+    #destaque__02 {
+        figure { 
+
+            .destaque {
+                &__imagem_wrapper {
+                    [class*="__tarja"] {
+                        border-radius: 3px;
+                    }
+                }
+            }
+        }
+    }
+
+    /*SEÇÃO CONTATO BLOCO*/
+    .contato__bloco {
+        background: $tema;
+        border: 1px solid $primaryColor;
+        border-radius: 24px;
+        position: relative;
+        padding: 48px;
+        margin: 0 auto;
+        max-width: 75%;
+
+        &:after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            background-color: rgba($primaryColor, 0.05);
+            border-radius: 12px;
+            top: 40px;
+            left: -40px;
+            z-index: -1;
+        }
+
+        .filial {
+            &__componente {
+                [class*="__item"] {
+                    margin-bottom: 24px;
+
+                    [class*="__nome"] {
+                        opacity: 0.6;
+                        font-size: 12px;
+                    }
+
+                    [class*="__dados"] {
+
+                        display: flex;
+                        flex-direction: column;
+                        gap: 16px;
+
+                        a, p {
+                            display: block;
+                            width: fit-content;
+                            
+                            * {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .corretor{
+
+        &__componente {
+            $borderColor: pick-visible-color($tema, $darkColor, $lightColor);
+            border-top: 1px solid rgba($borderColor, 0.09);
+            margin-top: 32px;
+            padding-top: 24px;
+
+            [class*="__flexbox"] {
+                position: relative;
+
+                img {
+                    width: 64px;
+                    height: 64px;
+                    overflow: hidden;
+                    border-radius: 100%;
+                }
+
+                figcaption {
+                    [class*="__nome"] {
+                        font-size: 16px;
+                        font-weight: bold;
+                        color: pick-visible-color($tema, $darkColor, $lightColor);
+                    }
+
+                    [class*="__creci"] {
+                        font-weight: bold;
+                    }
+
+                    [class*="__dados"] {
+                        display: none;
+                    }
+
+                    [class*="__ver_perfil"] {
+                        position: absolute;
+                        right: 0;
+                        text-transform: none;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+
+        &__ver_perfil{
+            text-transform: uppercase;
+        }
+    }
+
+    .form-floating {
+        .form-control{
+            border-radius: 5px;
+            border: 2px solid rgba(pick-visible-color($tema, $darkColor, $lightColor), 0.3);
+            background-color: transparent;
+
+            &:focus{
+                border: 2px solid $primaryColor;
+                box-shadow: none;
+            }
+        }
+
+        &.error{
+            >.form-control{
+                border: 2px solid #CB0000;
+            }
+        }
+    }
+
+    .form-check-input {
+        border-radius: 5px !important;
+    }
+
+    @media (max-width: 992px){
+        .secao__contato{
+            padding-bottom: 70px !important;
+        }
+    }
+}
