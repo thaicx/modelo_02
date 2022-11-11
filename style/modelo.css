@@ -104,6 +104,40 @@ body {
   justify-content: end;
   gap: 24px;
 }
+.corpo__02 .header__acoes-inline .tradutor__btn {
+  color: #0d0d0d;
+}
+.corpo__02 .header__acoes-inline .tradutor__btn i {
+  color: #0d0d0d;
+}
+.corpo__02 .header__acoes-inline .tradutor__menu a {
+  color: #0d0d0d;
+  border-bottom: none;
+}
+.corpo__02 .header__acoes-inline .menu__navegacao__closed .eltdf-position-right-inner {
+  background-color: #FF774A;
+  border-radius: 12px;
+  padding: 12px 16px;
+}
+.corpo__02 .header__acoes-inline .menu__navegacao__closed .eltdf-position-right-inner #menuopener {
+  display: flex;
+  align-items: center;
+}
+.corpo__02 .header__acoes-inline .menu__navegacao__closed .eltdf-position-right-inner #menuopener:before {
+  content: "MENU";
+  display: block;
+  margin-right: 8px;
+  color: #0d0d0d;
+  line-height: 1;
+}
+.corpo__02 .header__acoes-inline .menu__navegacao__closed .eltdf-position-right-inner #menuopener .eltdf-fm-lines {
+  width: 20px;
+  height: 16px;
+}
+.corpo__02 .header__acoes-inline .menu__navegacao__closed .eltdf-position-right-inner #menuopener .eltdf-fm-lines .eltdf-fm-line {
+  height: 2px;
+  background-color: #0d0d0d;
+}
 .corpo__02 .titulo__principal, .corpo__02 .titulo__outros {
   font-weight: bold;
 }

@@ -466,7 +466,7 @@
                     <div class="container">
                         <h2 class="titulo__outros">Unidades disponíveis</h2>
                         <div class="tabs tabs__center">
-                            <div class="nav nav-pills me-3 tabs__nav" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                            <div class="nav nav-pills me-3 tabs__nav pt-5 pb-5" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                                 <button class="nav-link active" id="unidades_venda_tab" data-bs-toggle="pill" data-bs-target="#unidades_venda" type="button" role="tab" aria-controls="unidades_venda_tab" aria-selected="true">
                                     Venda
                                 </button>
@@ -537,55 +537,62 @@
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="unidades_aluguel" role="tabpanel" aria-labelledby="unidades_aluguel">
-                                    <div class="destaque__imovel">
+                                    <div class="destaque__imovel" id="destaque__02">
                                         <figure>
                                             <div class="destaque__imagem_wrapper">
                                                 <p class="destaque__tarja">Excelente localização</p>
                                                 <picture>
                                                     <img src="https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
                                                 </picture>
-                                                <p class="destaque__negocio">Venda</p>
-                                                <p class="destaque__valor">R$ 100.000.000,00</p>
                                             </div>
 
                                             <figcaption>
-                                                <em class="destaque__codigo">CÓD.: MIDAS0001</em>
+
+                                                <div class="destaque__identificador">
+                                                    <span class="destaque__tipo">Cobertura</span>
+                                                    <span class="destaque__codigo">CÓD.: MIDAS0001</span>
+                                                </div>
 
                                                 <h3 class="destaque__titulo">Cobertura para venda</h3>
-                                                <p class="destaque__localizacao"><i class="fas fa-map-marker-alt"></i> São Conrado - Rio de Janeiro</p>
-
-                                                <div class="destaque__chamada">
-                                                    <p>Área nobre de são Conrado</p>
-                                                </div>
+                                                <p class="destaque__localizacao">São Conrado - Rio de Janeiro</p>
 
                                                 <ul class="destaque__icones">
                                                     <li>
                                                         <span class="icons-detalhe">
                                                             <i class="fa fa-bed" aria-hidden="true"></i>3
                                                         </span>
-                                                        <p>Quarto(s)</p>
                                                     </li>
                                                     <li>
                                                         <span class="icons-detalhe">
                                                             <i class="fa fa-bath" aria-hidden="true"></i>5
                                                         </span>
-                                                        <p>Banheiro(s)</p>
                                                     </li>
                                                     <li>
-                                                        <span class="icons-detalhe">240</span>
-                                                        <p>Total m²</p>
+                                                        <span class="icons-detalhe" title="Total m²">
+                                                            <i class="fa fa-bath" aria-hidden="true"></i> 240
+                                                        </span>
                                                     </li>
                                                     <li>
-                                                        <span class="icons-detalhe">240</span>
-                                                        <p>Útil m²</p>
+                                                        <span class="icons-detalhe" title="Útil m²">
+                                                            <i class="fa fa-bath" aria-hidden="true"></i> 240
+                                                        </span>
                                                     </li>
                                                     <li>
                                                         <span class="icons-detalhe">
                                                             <i class="fa fa-car" aria-hidden="true"></i>2
                                                         </span>
-                                                        <p>Vaga(s)</p>
                                                     </li>
                                                 </ul>
+
+                                                <div class="destaque__rodape">
+                                                    <div class="destaque__tipo-de-negocio">
+                                                        <p class="destaque__negocio">Venda</p>
+                                                        <p class="destaque__valor">R$ 100.000.000,00</p>
+                                                    </div>
+                                                    <button class="btn btn__primary btn__small">
+                                                        Ver detalhes
+                                                    </button>
+                                                </div>
                                             </figcaption>
                                         </figure>
                                     </div>

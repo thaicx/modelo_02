@@ -42,6 +42,54 @@
             align-items: center;
             justify-content: end;
             gap: 24px;
+
+            .tradutor {
+                &__btn {
+                    color: pick-visible-color($tema, $darkColor, $lightColor);
+
+                    i {
+                        color: pick-visible-color($tema, $darkColor, $lightColor);
+                    }
+                }
+
+                &__menu{
+                    a {
+                        color: pick-visible-color($tema, $darkColor, $lightColor);
+                        border-bottom: none;
+                    }
+                }
+            }
+
+            .menu__navegacao__closed {
+                .eltdf-position-right-inner {
+                    background-color: $primaryColor;
+                    border-radius: 12px;
+                    padding: 12px 16px;
+
+                    #menuopener {
+
+                        display: flex;
+                        align-items: center;
+
+                        &:before {
+                            content: "MENU";
+                            display: block;
+                            margin-right: 8px;
+                            color: pick-visible-color($primaryColor, $darkColor, $lightColor);
+                            line-height: 1;
+                        }
+
+                        .eltdf-fm-lines {
+                            width: 20px;
+                            height: 16px;
+                            .eltdf-fm-line {
+                                height: 2px;
+                                background-color: pick-visible-color($primaryColor, $darkColor, $lightColor);
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
