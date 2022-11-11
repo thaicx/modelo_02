@@ -275,6 +275,10 @@ body {
   outline: none;
   font-size: 15px;
 }
+.btn__small {
+  padding: 8px 24px !important;
+  font-size: 12px;
+}
 .btn__primary {
   background-color: #FF774A;
   color: #0d0d0d !important;
@@ -591,24 +595,28 @@ a:hover {
   max-width: 360px;
   min-width: 240px;
   overflow: hidden;
-  border: 1px solid #F1F1F1;
+  border: 1px solid rgba(13, 13, 13, 0.05);
   border-radius: 10px;
 }
-#destaque__02 figcaption {
-  padding: 0 10px;
+#destaque__02 figure {
+  background-color: #fff;
+  color: #0d0d0d;
 }
-#destaque__02 .destaque__imagem_wrapper {
+#destaque__02 figure figcaption {
+  padding: 0 16px;
+}
+#destaque__02 figure .destaque__imagem_wrapper {
   position: relative;
   background-color: #0d0d0d;
 }
-#destaque__02 .destaque__imagem_wrapper picture {
+#destaque__02 figure .destaque__imagem_wrapper picture {
   min-height: 230px;
   display: block;
   max-height: 230px;
   position: relative;
   text-align: center;
 }
-#destaque__02 .destaque__imagem_wrapper img {
+#destaque__02 figure .destaque__imagem_wrapper img {
   width: 100%;
   -o-object-fit: scale-down;
   object-fit: scale-down;
@@ -617,7 +625,7 @@ a:hover {
   min-height: 230px;
   max-height: 230px;
 }
-#destaque__02 .destaque__imagem_wrapper [class*=__tarja] {
+#destaque__02 figure .destaque__imagem_wrapper [class*=__tarja] {
   position: absolute;
   z-index: 1;
   width: -webkit-max-content;
@@ -637,58 +645,85 @@ a:hover {
   line-height: 1;
   padding: 8px;
 }
-#destaque__02 .destaque__codigo {
-  color: #FF774A;
+#destaque__02 figure .destaque__identificador {
   font-size: 11px;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px 0;
 }
-#destaque__02 .destaque__titulo {
-  font-size: 16px;
-}
-#destaque__02 .destaque__localizacao {
+#destaque__02 figure .destaque__identificador * {
+  display: block;
+  font-weight: bold;
   font-size: 12px;
-  opacity: 0.5;
+}
+#destaque__02 figure .destaque__identificador [class*=__codigo] {
+  color: #FF774A;
+}
+#destaque__02 figure .destaque__identificador [class*=__tipo] {
+  color: #0d0d0d;
+}
+#destaque__02 figure .destaque__titulo {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+#destaque__02 figure .destaque__localizacao {
+  font-size: 12px;
+  opacity: 0.8;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-weight: 400;
 }
-#destaque__02 .destaque__chamada {
-  margin-left: -10px;
-  margin-right: -10px;
-  background-color: rgba(179, 179, 179, 0.2);
-  padding: 0 10px;
-  height: 52px;
-  line-height: 52px;
-}
-#destaque__02 .destaque__chamada p {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-#destaque__02 .destaque__icones {
+#destaque__02 figure .destaque__icones {
   position: relative;
-  height: 35px;
   width: 100%;
   margin: 16px 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-column-gap: 5px;
-  align-items: self-end;
+  display: flex;
+  grid-column-gap: 16px;
+  align-items: center;
   padding: 0;
+  min-height: 35px;
 }
-#destaque__02 .destaque__icones li {
+#destaque__02 figure .destaque__icones li {
   text-align: center;
 }
-#destaque__02 .destaque__icones .icons-detalhe {
-  display: block;
-  width: 100%;
-  height: auto;
+#destaque__02 figure .destaque__icones .icons-detalhe {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(13, 13, 13, 0.7);
 }
-#destaque__02 .destaque__icones .icons-detalhe i {
-  padding: 0 5px 0 0px;
+#destaque__02 figure .destaque__icones .icons-detalhe i {
+  padding: 6px;
+  background: rgba(13, 13, 13, 0.02);
+  border-radius: 2px;
+  min-height: 24px;
+  min-width: 24px;
+  font-size: 13px;
+  color: rgba(13, 13, 13, 0.5);
 }
-#destaque__02 .destaque__icones p {
-  font-size: 11px;
-  margin: 0px;
+#destaque__02 figure .destaque__rodape {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  margin-top: 24px;
+}
+#destaque__02 figure .destaque__rodape * {
+  margin-bottom: 0;
+}
+#destaque__02 figure .destaque__rodape [class*=__negocio] {
+  font-size: 12px;
+}
+#destaque__02 figure .destaque__rodape [class*=__valor] {
+  font-size: 16px;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .pontos_de_interesse__opcoes ul {

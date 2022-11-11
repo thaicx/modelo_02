@@ -96,6 +96,7 @@ body {
 .corpo__02 .header__02 {
   padding-top: 40px !important;
   padding-bottom: 16px;
+  border: none !important;
 }
 .corpo__02 .header__acoes-inline {
   display: flex;

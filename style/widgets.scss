@@ -274,6 +274,11 @@
     outline: none;
     font-size: 15px;
 
+    &__small {
+        padding: 8px 24px !important;
+        font-size: 12px;
+    }
+
     &__primary {
         background-color: $primaryColor;
         color: pick-visible-color($primaryColor, $darkColor, $lightColor) !important;
@@ -654,113 +659,152 @@ a{
     max-width: 360px;
     min-width: 240px;
     overflow: hidden;
-    border: 1px solid #F1F1F1;
+    $borderColor: pick-visible-color($tema, $darkColor, $lightColor);
+    border: 1px solid rgba($borderColor, 0.05);
     border-radius: 10px;
 
-    figcaption{
-        padding: 0 10px;
-    }
+    figure {
+        background-color: $tema;
+        $corInterna: pick-visible-color($tema, $darkColor, $lightColor);
+        color: $corInterna;
 
-    .destaque {
-        &__imagem_wrapper{
-            position: relative;
-            background-color: pick-visible-color($tema, $darkColor, $lightColor);
+        figcaption{
+            padding: 0 16px;
+        }
 
-            picture{
-                min-height: 230px;
-                display: block;
-                max-height: 230px;
+        .destaque {
+            &__imagem_wrapper{
                 position: relative;
-                text-align: center;
-            }
+                background-color: pick-visible-color($tema, $darkColor, $lightColor);
 
-            img{
-                width: 100%;
-                -o-object-fit: scale-down;
-                object-fit: scale-down;
-                position: relative;
-                height: 100%;
-                min-height: 230px;
-                max-height: 230px;
-            }
+                picture{
+                    min-height: 230px;
+                    display: block;
+                    max-height: 230px;
+                    position: relative;
+                    text-align: center;
+                }
 
-            [class*="__tarja"] {
-                position: absolute;
-                z-index: 1;
-                width: max-content;
-                background: $primaryColor;
-                color: pick-visible-color($primaryColor, $darkColor, $lightColor);
-                padding: 2px 5px;
-                font-size: 11px;
-                height: max-content;
-                text-transform: uppercase;
-                left: 10px;
-                font-weight: bold;
-                top: 10px;
-                line-height: 1;
-                padding: 8px;
-            }
-        }
+                img{
+                    width: 100%;
+                    -o-object-fit: scale-down;
+                    object-fit: scale-down;
+                    position: relative;
+                    height: 100%;
+                    min-height: 230px;
+                    max-height: 230px;
+                }
 
-        &__codigo{
-            color: $primaryColor;
-            font-size: 11px;
-        }
-
-        &__titulo{
-            font-size: 16px;
-        }
-
-        &__localizacao{
-            font-size: 12px;
-            opacity: 0.5;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        &__chamada{
-            margin-left: -10px;
-            margin-right: -10px;
-            background-color: rgba(darken(#fff, 30%), 0.2);
-            padding: 0 10px;
-            height: 52px;
-            line-height: 52px;
-            p{
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-        }
-
-        &__icones{
-            position: relative;
-            height: 35px;
-            width: 100%;
-            margin: 16px 0;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-            grid-column-gap: 5px;
-            align-items: self-end;
-            padding: 0;
-
-
-            li{
-                text-align: center;
-            }
-
-            .icons-detalhe{
-                display: block;
-                width: 100%;
-                height: auto;
-                i{
-                    padding: 0 5px 0 0px;
+                [class*="__tarja"] {
+                    position: absolute;
+                    z-index: 1;
+                    width: max-content;
+                    background: $primaryColor;
+                    color: pick-visible-color($primaryColor, $darkColor, $lightColor);
+                    padding: 2px 5px;
+                    font-size: 11px;
+                    height: max-content;
+                    text-transform: uppercase;
+                    left: 10px;
+                    font-weight: bold;
+                    top: 10px;
+                    line-height: 1;
+                    padding: 8px;
                 }
             }
 
-            p{
+            &__identificador {
                 font-size: 11px;
-                margin: 0px;
+                display: flex;
+                gap: 16px;
+                justify-content: space-between;
+                align-items: center;
+                margin: 16px 0;
+
+                * {
+                    display: block;
+                    font-weight: bold;
+                    font-size: 12px;
+                }
+
+                [class*="__codigo"] {
+                    color: $primaryColor;
+                }
+
+                [class*="__tipo"] {
+                    color: $corInterna;
+                }
+            }
+
+            &__titulo{
+                font-size: 16px;
+                font-weight: bold;
+                margin-bottom: 4px;
+            }
+
+            &__localizacao{
+                font-size: 12px;
+                opacity: 0.8;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                font-weight: 400;
+            }
+
+            &__icones{
+                position: relative;
+                width: 100%;
+                margin: 16px 0;
+                display: flex;
+                grid-column-gap: 16px;
+                align-items: center;
+                padding: 0;
+                min-height: 35px;
+
+                li{
+                    text-align: center;
+                }
+
+                .icons-detalhe {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    color: rgba($corInterna, 0.7);
+
+                    i{
+                        padding: 6px;
+                        background: rgba($borderColor, 0.02);
+                        border-radius: 2px;
+                        min-height: 24px;
+                        min-width: 24px;
+                        font-size: 13px;
+                        color: rgba($corInterna, 0.5);
+                    }
+                }
+            }
+
+            &__rodape {
+                display: flex;
+                justify-content: space-between;
+                gap: 16px;
+                align-items: center;
+                margin-top: 24px;
+
+                * {
+                    margin-bottom: 0;
+                }
+
+                [class*="__negocio"] {
+                    font-size: 12px;
+                }
+
+                [class*="__valor"] {
+                    font-size: 16px;
+                    font-weight: bold;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
             }
         }
     }
