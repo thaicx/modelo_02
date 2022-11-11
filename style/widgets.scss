@@ -251,6 +251,7 @@
 
     &__principal, &__outros{
         font-family: $fontTitulo;
+        word-break: break-word;
     }
 
     &__principal{
@@ -346,6 +347,15 @@ a{
             justify-content: center;
 
             $border: pick-visible-color($tema, $darkColor, $lightColor);
+
+            @media (max-width: 767px){
+                flex-wrap: nowrap;
+                overflow: overlay;
+                margin-bottom: 32px;
+                padding-bottom: 32px !important;
+                justify-content: flex-start;
+            }
+
             .nav-link{
                 opacity: 0.6;
                 color: pick-visible-color($tema, $darkColor, $lightColor);
@@ -354,6 +364,10 @@ a{
                 font-size: 18px;
                 padding: 8px 3rem;
                 font-weight: 500;
+
+                @media (max-width: 767px){
+                    padding: 8px 32px;
+                }
 
                 &:hover{
                     opacity: 1;
@@ -482,9 +496,14 @@ a{
 .condominio {
     &__main {
         figure {
+
             display: flex;
             align-items: center;
             gap: 24px;
+
+            @media (max-width: 767px){
+                flex-direction: column;
+            }
 
             [class*="__imagem"] {
                 text-align: center;
@@ -493,6 +512,10 @@ a{
                 img {
                     max-height: 360px;
                     object-fit: contain;
+
+                    @media (max-width: 767px){
+                        width: 100%;
+                    }
                 }
             }
 
@@ -525,6 +548,11 @@ a{
         gap: 32px;
         align-items: center;
         padding-top: 32px;
+
+        @media (max-width: 767px){
+            flex-direction: column;
+            align-items: baseline;
+        }
 
         [class*="_chamada"] {
             strong {

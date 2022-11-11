@@ -64,6 +64,16 @@ body {
   color: #0d0d0d;
 }
 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #FF774A;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 119, 74, 0.15);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ffb097;
+}
+
 .corpo__02 {
   /*INICIO*/
   /*CARACTERÍSTICAS*/
@@ -98,11 +108,27 @@ body {
   padding-bottom: 16px;
   border: none !important;
 }
+@media (max-width: 767px) {
+  .corpo__02 .header__02 {
+    padding-top: 32px !important;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(13, 13, 13, 0.09) !important;
+  }
+  .corpo__02 .header__02 .logotipo__topo {
+    text-align: center !important;
+  }
+}
 .corpo__02 .header__acoes-inline {
   display: flex;
   align-items: center;
   justify-content: end;
   gap: 24px;
+}
+@media (max-width: 767px) {
+  .corpo__02 .header__acoes-inline {
+    justify-content: center;
+    padding-top: 40px;
+  }
 }
 .corpo__02 .header__acoes-inline .tradutor__btn {
   color: #0d0d0d;
@@ -197,6 +223,13 @@ body {
   right: -40px;
   z-index: -1;
 }
+@media (max-width: 767px) {
+  .corpo__02 .imagem__principal__wrapper:after {
+    right: 0;
+    top: -16px;
+    left: -40px;
+  }
+}
 .corpo__02 .imagem__principal__wrapper img {
   border-radius: 12px;
   overflow: hidden;
@@ -221,8 +254,13 @@ body {
   width: 200%;
   position: absolute;
   left: -100%;
-  opacity: 1;
+  opacity: 0.7;
   background: #0d0d0d;
+}
+@media (max-width: 767px) {
+  .corpo__02 .chamada__pontos-de-interesse hr {
+    display: none;
+  }
 }
 .corpo__02 .chamada__pontos-de-interesse figure {
   display: flex;
@@ -249,6 +287,13 @@ body {
   flex-wrap: wrap;
   grid-template-columns: auto;
   justify-content: end;
+}
+@media (max-width: 767px) {
+  .corpo__02 .caracteristicas__icones {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+  }
 }
 .corpo__02 .caracteristicas__icones [class*=__titulo] {
   min-width: 300px;
@@ -279,10 +324,24 @@ body {
   border-radius: 12px;
   padding: 32px;
 }
+@media (max-width: 767px) {
+  .corpo__02 .caracteristicas__icones [class*=__item] {
+    width: 100%;
+    height: 100%;
+    padding: 24px;
+    max-width: 44%;
+  }
+}
 .corpo__02 .caracteristicas__icones [class*=__item].ver_mais {
   background: rgba(255, 119, 74, 0.05);
   border: 1px solid #FF774A;
   cursor: pointer;
+}
+@media (max-width: 767px) {
+  .corpo__02 .caracteristicas__icones [class*=__item].ver_mais {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 .corpo__02 .caracteristicas__icones [class*=__item].ver_mais i {
   color: #FF774A !important;
@@ -302,8 +361,10 @@ body {
   color: #0d0d0d;
   text-align: right;
 }
-.corpo__02 .info__secao {
-  margin-top: 110px;
+@media (min-width: 767px) {
+  .corpo__02 .info__secao {
+    margin-top: 110px;
+  }
 }
 .corpo__02 .acordiao__secao {
   padding-bottom: 0;
@@ -330,7 +391,17 @@ body {
   border: 1px solid #FF774A;
   border-radius: 12px;
   position: relative;
-  min-height: 350px;
+}
+@media (max-width: 767px) {
+  .corpo__02 .acordiao__secao [class*=__maisinfo] .accordion-item {
+    padding: 32px 24px;
+    margin-bottom: 24px;
+  }
+}
+@media (min-width: 767px) {
+  .corpo__02 .acordiao__secao [class*=__maisinfo] .accordion-item {
+    min-height: 350px;
+  }
 }
 .corpo__02 .acordiao__secao [class*=__maisinfo] .accordion-item:last-child {
   border-bottom: none;
@@ -342,6 +413,15 @@ body {
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+@media (max-width: 767px) {
+  .corpo__02 .acordiao__secao [class*=__maisinfo] .accordion-item .breve-descricao {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: end;
+    margin-top: 30px;
+  }
 }
 @media (min-width: 767px) {
   .corpo__02 .acordiao__secao [class*=__maisinfo] .accordion-item .breve-descricao {
@@ -372,11 +452,26 @@ body {
   position: unset;
   max-width: 140px;
 }
+@media (max-width: 767px) {
+  .corpo__02 .acordiao__secao [class*=__maisinfo] .accordion-button {
+    max-width: 100%;
+    flex-direction: column;
+    align-items: baseline;
+  }
+  .corpo__02 .acordiao__secao [class*=__maisinfo] .accordion-button::after {
+    display: none;
+  }
+}
 .corpo__02 .acordiao__secao [class*=__maisinfo] .accordion-button:not(.collapsed) p {
   opacity: 0;
   width: 0;
   font-size: 0;
   margin: 0;
+}
+@media (max-width: 767px) {
+  .corpo__02 .acordiao__secao [class*=__maisinfo] .accordion-button:not(.collapsed) p {
+    height: 0;
+  }
 }
 .corpo__02 .secao__midias .tabs__center [class*=__conteudo] img {
   border-radius: 12px;
@@ -399,6 +494,13 @@ body {
   right: 0;
   top: -64px;
 }
+@media (max-width: 767px) {
+  .corpo__02 .condominio__bloco:before {
+    width: 100%;
+    height: 88%;
+    left: -56px;
+  }
+}
 .corpo__02 .condominio__main, .corpo__02 .condominio__cta {
   position: relative;
   z-index: 1;
@@ -416,8 +518,12 @@ body {
 .corpo__02 .condominio__cta {
   padding-top: 80px;
   justify-content: space-between;
-  width: 75%;
-  float: right;
+}
+@media (min-width: 767px) {
+  .corpo__02 .condominio__cta {
+    width: 75%;
+    float: right;
+  }
 }
 .corpo__02 .pontos_de_interesse__bloco {
   border: 1px solid rgba(13, 13, 13, 0.09);
@@ -427,8 +533,15 @@ body {
   position: relative;
   background-color: #fff;
 }
-.corpo__02 .pontos_de_interesse__bloco * {
-  position: relative;
+@media (max-width: 767px) {
+  .corpo__02 .pontos_de_interesse__bloco {
+    padding: 32px 16px;
+  }
+}
+@media (min-width: 767px) {
+  .corpo__02 .pontos_de_interesse__bloco * {
+    position: relative;
+  }
 }
 .corpo__02 .pontos_de_interesse__bloco:after {
   content: "";
@@ -442,6 +555,16 @@ body {
   right: -40px;
   z-index: -1;
 }
+@media (max-width: 767px) {
+  .corpo__02 .pontos_de_interesse__bloco:after {
+    right: 0px;
+    left: -40px;
+  }
+}
+.corpo__02 .pontos_de_interesse__bloco [class*=__mapa] {
+  overflow: hidden;
+  border-radius: 12px;
+}
 .corpo__02 #destaque__02 figure .destaque__imagem_wrapper [class*=__tarja] {
   border-radius: 3px;
 }
@@ -453,6 +576,12 @@ body {
   padding: 48px;
   margin: 0 auto;
   max-width: 75%;
+}
+@media (max-width: 767px) {
+  .corpo__02 .contato__bloco {
+    max-width: 100%;
+    margin-bottom: 72px;
+  }
 }
 .corpo__02 .contato__bloco:after {
   content: "";

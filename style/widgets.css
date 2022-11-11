@@ -257,6 +257,7 @@ body {
 }
 .titulo__principal, .titulo__outros {
   font-family: "Raleway", sans-serif;
+  word-break: break-word;
 }
 .titulo__principal {
   font-size: 45px;
@@ -335,6 +336,15 @@ a:hover {
 .tabs__center [class*=__nav] {
   justify-content: center;
 }
+@media (max-width: 767px) {
+  .tabs__center [class*=__nav] {
+    flex-wrap: nowrap;
+    overflow: overlay;
+    margin-bottom: 32px;
+    padding-bottom: 32px !important;
+    justify-content: flex-start;
+  }
+}
 .tabs__center [class*=__nav] .nav-link {
   opacity: 0.6;
   color: #0d0d0d;
@@ -343,6 +353,11 @@ a:hover {
   font-size: 18px;
   padding: 8px 3rem;
   font-weight: 500;
+}
+@media (max-width: 767px) {
+  .tabs__center [class*=__nav] .nav-link {
+    padding: 8px 32px;
+  }
 }
 .tabs__center [class*=__nav] .nav-link:hover {
   opacity: 1;
@@ -446,6 +461,11 @@ a:hover {
   align-items: center;
   gap: 24px;
 }
+@media (max-width: 767px) {
+  .condominio__main figure {
+    flex-direction: column;
+  }
+}
 .condominio__main figure [class*=__imagem] {
   text-align: center;
   flex: 0 0 50%;
@@ -454,6 +474,11 @@ a:hover {
   max-height: 360px;
   -o-object-fit: contain;
      object-fit: contain;
+}
+@media (max-width: 767px) {
+  .condominio__main figure [class*=__imagem] img {
+    width: 100%;
+  }
 }
 .condominio__main figure figcaption {
   flex: 0 0 50%;
@@ -480,6 +505,12 @@ a:hover {
   gap: 32px;
   align-items: center;
   padding-top: 32px;
+}
+@media (max-width: 767px) {
+  .condominio__cta {
+    flex-direction: column;
+    align-items: baseline;
+  }
 }
 .condominio__cta [class*=_chamada] strong {
   font-size: 16px;
