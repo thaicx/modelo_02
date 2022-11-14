@@ -294,6 +294,18 @@
             color: pick-visible-color($primaryColor, $darkColor, $lightColor) !important;
         }
     }
+
+    &__icon {
+        padding: 16px 20px;
+        border-radius: 100%;
+
+        $backgroundColor: pick-visible-color($tema, $darkColor, $lightColor);
+        background: rgba($backgroundColor, 0.05) !important;
+
+        * {
+            color: pick-visible-color($tema, $darkColor, $lightColor);
+        }
+    }
 }
 
 .animation_hover_up {
